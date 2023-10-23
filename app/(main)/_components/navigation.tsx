@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { cn } from "@/lib/utils";
+import { UserItem } from "./user-item";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -17,6 +18,10 @@ export const Navigation = () => {
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!isResizingRef.current) return;
+
+    // event.clientX is a property of the MouseEvent object.
+    // It represents the horizontal (X-axis) position of the mouse pointer relative to the client area of the browser window.
+    // In other words, it gives the horizontal position of the mouse pointer within the viewport.
     let newWidth = event.clientX;
 
     if (newWidth < 240) newWidth = 240;
@@ -113,7 +118,7 @@ export const Navigation = () => {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action Items</p>
+          <UserItem />
         </div>
         <div className="mt-4">
           <p>Documents</p>
