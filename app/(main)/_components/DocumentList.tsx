@@ -25,7 +25,6 @@ export const DocumentList = ({
   const documents = useQuery(api.documents.getSidebar, {
     parentDocument: parentDocumentId,
   });
-
   const onExpand = (documentId: string) => {
     setExpanded((prevExpanded) => ({
       ...prevExpanded,
