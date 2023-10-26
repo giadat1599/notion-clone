@@ -18,7 +18,7 @@ interface ConfirmModalProps extends PropsWithChildren {
 }
 
 export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
-  const handleCofirm = (
+  const handleConfirm = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     event.stopPropagation();
@@ -40,7 +40,7 @@ export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
           <AlertDialogCancel onClick={(e) => e.stopPropagation()}>
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction onClick={handleCofirm}>Confirm</AlertDialogAction>
+          <AlertDialogAction onClick={handleConfirm}>Confirm</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
