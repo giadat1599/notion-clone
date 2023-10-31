@@ -19,7 +19,7 @@ interface ConfirmModalProps extends PropsWithChildren {
 
 export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
   const handleConfirm = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.stopPropagation();
     onConfirm();
