@@ -30,8 +30,12 @@ export const CoverImageModal = () => {
     if (file) {
       setIsSumitting(true);
       setFile(file);
+
       const res = await edgestore.publicFiles.upload({
         file,
+        options: {
+          replaceTargetUrl: coverImage.url,
+        },
       });
 
       await update({
